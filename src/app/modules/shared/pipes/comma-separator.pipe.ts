@@ -4,16 +4,12 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'commaSeparator'
 })
 export class CommaSeparatorPipe implements PipeTransform {
-  private prefix: string;
   private decimalSeparator: string;
   private thousandsSeparator: string;
-  private suffix: string;
 
   constructor() {
-    this.prefix = '';
     this.decimalSeparator = '.';
     this.thousandsSeparator = ',';
-    this.suffix = ' $';
   }
 
   transform(value: string, fractionSize: number = 2): string {

@@ -78,6 +78,12 @@
 						font-size: 14px;
 						font-weight: 300;
 						cursor: pointer;
+						transition: all ease-in 0.3s;
+
+						@include on-event {
+							transform: translate(0, -4px);
+							transition: all ease-in 0.3s;
+						}
 					}
 				}
 			}

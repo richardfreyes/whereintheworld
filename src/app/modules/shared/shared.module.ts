@@ -13,11 +13,9 @@ import { HomeComponent } from '@rcc/modules/home/home.component';
 import { DetailedCountryComponent } from '@rcc/modules/detailed-country/detailed-country.component';
 import { TopBarComponent } from '@rcc/shared/components/top-bar/top-bar.component';
 import { CardListComponent } from '@rcc/shared/components/card-list/card-list.component';
-import { CardDetailViewComponent } from '@rcc/shared/components/card-detail-view/card-detail-view.component';
 import { EmptyStateComponent } from '@rcc/shared/components/empty-state/empty-state.component';
 import { ButtonComponent } from '@rcc/shared/components/button/button.component';
 import { CountriesEffects } from '@rcc/shared/store/countries/effects/countries.effect';
-import { SearchBarComponent } from '@rcc/shared/components/search-bar/search-bar.component';
 import * as fromCountries from '@rcc/shared/store/countries/index';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { AppRoutingModule } from '@rcc/root/app-routing.module';
@@ -45,16 +43,13 @@ import { CommaSeparatorPipe } from './pipes/comma-separator.pipe';
 		DetailedCountryComponent,
 		TopBarComponent,
 		CardListComponent,
-		CardDetailViewComponent,
 		ButtonComponent,
-		SearchBarComponent,
 		EmptyStateComponent,
 		CommaSeparatorPipe
 	],
 	exports: [
 		TopBarComponent,
 		CardListComponent,
-		CardDetailViewComponent,
 		ButtonComponent
 	]
 })

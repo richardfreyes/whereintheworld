@@ -84,3 +84,21 @@
 		@include boxshadow(1px 3px 5px 0px $color);
   	}
 }
+
+@mixin on-event($self: false) {
+   @if $self{
+		&,
+		&:active,
+		&:focus,
+		&:hover {
+			@content;
+		}
+  }
+  @else {
+		&:active,
+		&:focus,
+		&:hover {
+			@content;
+		}
+  }
+}
