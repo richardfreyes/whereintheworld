@@ -22,7 +22,7 @@
 					<div class="row row-inner">
 						<div class="col-inner col-holder">
 							<p class="label" *ngIf="selectedCountryData?.nativeName">Native Name: <span class="text">{{ selectedCountryData?.nativeName }}</span></p>
-							<p class="label" *ngIf="selectedCountryData?.population">Population: <span class="text">{{ selectedCountryData?.population }}</span></p>
+							<p class="label" *ngIf="selectedCountryData?.population">Population: <span class="text">{{ selectedCountryData?.population | commaSeparator }}</span></p>
 							<p class="label" *ngIf="selectedCountryData?.region">Region: <span class="text">{{ selectedCountryData?.region }}</span></p>
 							<p class="label" *ngIf="selectedCountryData?.subregion">Sub Region: <span class="text">{{ selectedCountryData?.subregion }}</span></p>
 							<p class="label" *ngIf="selectedCountryData?.capital">Capital: <span class="text">{{ selectedCountryData?.capital }}</span></p>
