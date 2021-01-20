@@ -1,0 +1,78 @@
+
+:root .dark-theme {
+	color: #f8ffff;
+	background: #2b3743;
+
+	// home page
+	.home {
+		background: #202d36;
+
+		.icon {
+			color: #fff !important;
+		}
+	}
+
+	// detail page
+	.card-detail-view {
+		background: #202d36;
+
+		app-button {
+			button {
+				background: #2b3743;
+			}
+		}
+
+		.badge {
+			background: #2b3743;
+		}
+	}
+
+	// classes
+	.box-shadow-1 {
+		@include box-shadow(1, #1c283452)
+	}
+	
+	.box-shadow-2 {
+		@include box-shadow(2, #1c283452)
+	}
+	
+	.box-shadow-3 {
+		@include box-shadow(3, #1c283452)
+	}
+	
+	.box-shadow-4 {
+		@include box-shadow(4, #1c283452)
+	}
+
+	.box-shadow-bottom {
+		@include box-shadow(box-shadow-bottom, #1c283452)
+	}
+
+	// components
+	input {
+		background: #2b3743;
+		color: #f8ffff;
+
+		&::placeholder {
+			color: #f8ffff;
+		}
+	}
+
+	mat-form-field {
+		.mat-form-field-wrapper {
+			.mat-form-field-flex {
+				background: #2b3743;
+				color: #f8ffff;
+			}
+		}
+
+		mat-label,
+		mat-select {
+			color: #f8ffff;
+
+			span {
+				color: #f8ffff;
+			}
+		}
+	}
+}

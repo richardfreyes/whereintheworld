@@ -1,0 +1,206 @@
+@import 'theme';
+
+.card-detail-view {
+	min-height: 1000px;
+	padding: 80px 50px;
+	background: #fff;
+
+	mat-spinner {
+		margin: 200px auto;
+	}
+
+	app-button {
+		display: inline-block;
+	}
+
+	.content-wrapper {
+		margin-top: 80px;
+
+		.img-holder {
+			img {
+				width: 555px;
+				max-width: 100%;
+				height: 400px;
+				margin: auto;
+				object-fit: cover;
+			}
+		}
+
+		&.row-parent {
+			width: 100%;
+
+			.col-parent {
+				flex: 0 0 50%;
+				max-width: 50%;
+
+				.wrapper {
+					padding: 40px 0 40px 36px;
+				}
+
+				.title {
+					margin: 0 0 27px;
+					font-weight: 800;
+					font-size: 32px;
+				}
+
+				.row-inner {
+					justify-content: space-between;
+
+					p {
+						&.label {
+							margin: 0 0 10px;
+							font-weight: 600;
+		
+							.text {
+								font-weight: 300;
+							}
+						}
+					}
+				}
+
+				.countries {
+					margin: 65px 0 0;
+					font-weight: 600;
+
+					span {
+						&:first-child {
+							display: inline-block;
+    						margin-right: 10px;
+						}
+					}
+
+					.badge {
+						display: inline-block;
+						min-width: 97px;
+						margin: 0 5px 10px 5px;
+						padding: 5px;
+						text-align: center;
+						font-size: 14px;
+						font-weight: 300;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+
+	@include respond-to(md-down) {
+		padding: 40px 0;
+		.content-wrapper {
+	
+			.img-holder {
+				text-align: center;
+
+				img {
+				}
+			}
+	
+			&.row-parent {
+	
+				.col-parent {
+	
+					.wrapper {
+					}
+	
+					.title {
+					}
+	
+					.row-inner {
+	
+						p {
+							&.label {
+			
+								.text {
+								}
+							}
+						}
+					}
+	
+					.countries {
+	
+						span {
+							&:first-child {
+							}
+						}
+	
+						.badge {
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	@include respond-to(sm-down) {
+		padding-top: 40px;
+		padding-bottom: 50px;
+		background: #fafafa;
+
+		.content-wrapper {
+			display: inline-block;
+			margin-top: 64px;
+
+			.img-holder {
+				margin-bottom: 38px;
+
+
+				img {
+					width: 322px;
+					max-width: 100%;
+					height: 230px;
+				}
+			}
+	
+			&.row-parent {
+				.col-parent {
+					width: 100%;
+					max-width: inherit;
+					flex: 0 0 100%;
+
+					.wrapper {
+						padding: 0;
+					}
+
+					.title {
+						margin-bottom: 22px;
+						font-size: 22px;
+					}
+
+					.row-inner {
+						.col-inner {
+							&:first-child {
+								margin-bottom: 32px;
+							}
+						}
+
+						p {
+							font-size: 14px;
+
+							&.label {
+								margin: 0 0 13px;
+	
+								.text {
+								}
+							}
+						}
+					}
+
+					.countries {
+						margin: 28px 0 0;
+
+						span {
+							&:first-child {
+								display: block;
+								margin-bottom: 18px;
+							}
+						}
+
+						.badge {
+							font-size: 12px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

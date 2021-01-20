@@ -1,0 +1,86 @@
+@mixin respond-to($breakpoint) {
+	@if $breakpoint == "xs" {
+		@media screen and (max-width: 575px) { @content; }
+	}
+
+	@else if $breakpoint == "sm-down" {
+		@media screen and (max-width: 767px) { @content; }
+	}
+
+	@else if $breakpoint == "sm" {
+		@media (min-width: 576px) and (max-width: 767px) { @content; }
+	}
+
+	@else if $breakpoint == "sm-up" {
+		@media screen and (min-width: 576px) { @content; }
+	}
+
+	@else if $breakpoint == "md-down" {
+		@media screen and (max-width: 991px) { @content; }
+	}
+
+	@else if $breakpoint == "md" {
+		@media (min-width: 768px) and (max-width: 991px) { @content; }
+	}
+
+	@else if $breakpoint == "md-up" {
+		@media screen and (min-width: 768px) { @content; }
+	}
+
+	@else if $breakpoint == "lg-down" {
+		@media screen and (max-width: 1199px) { @content; }
+	}
+
+	@else if $breakpoint == "lg" {
+		@media (min-width: 992px) and (max-width: 1199px) { @content; }
+	}
+
+	@else if $breakpoint == "lg-up" {
+		@media screen and (min-width: 992px) { @content; }
+	}
+
+	@else if $breakpoint == "xl" {
+		@media screen and (min-width: 1200px) { @content; }
+	}
+}
+
+@mixin flexbox() {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+@mixin boxshadow($properties...) {
+	-webkit-box-shadow: $properties;
+	-moz-box-shadow: $properties;
+	-ms-box-shadow: $properties;
+	-o-box-shadow: $properties;
+	box-shadow: $properties;
+}
+
+@mixin box_shadow($name, $color) {
+	@if $color == 'dark' {
+		$color: #1c283452;
+	} @else if $color == 'light' {
+		$color: #eff1ee;
+	} @else if $color == 'm-dark' {
+		$color: #dfdfdf;
+	} @else if $color == 'x-dark' {
+		$color: #eff1ee36;
+	}
+
+	@if $name == 1 {
+		@include boxshadow(0 0 9px 3px $color);
+	} @else if $name == 2 {
+		@include boxshadow(0 0 3px 3px $color);
+	} @else if $name == 3 {
+		box-shadow: 0 0 5px 3px ;
+		@include boxshadow(0 0 5px 3px $color);
+	} @else if $name == 4 {
+		@include boxshadow(0 0 20px 10px $color);
+	} @else if $name == 'box-shadow-bottom' {
+		@include boxshadow(1px 3px 5px 0px $color);
+  	}
+}

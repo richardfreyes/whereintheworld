@@ -1,0 +1,39 @@
+<div class="card-detail-view">
+	<app-button
+		class="btn-back"
+		type="back"
+		(click)="close()"
+	></app-button>
+
+	<div class="content-wrapper row row-parent" *ngIf="selectedCountryData">
+		<div class="img-holder col-parent">
+			<img src="{{ selectedCountryData.flag }}" alt="flag-preview">
+		</div>
+
+		<div class="desc-holder col-parent">
+			<div class="wrapper">
+				<h1 class="title">{{ selectedCountryData.name }}</h1>
+
+				<div class="row row-inner">
+					<div class="col-inner col-holder">
+						<p class="label">Native Name: <span class="text">{{ selectedCountryData.nativeName }}</span></p>
+						<p class="label">Population: <span class="text">{{ selectedCountryData.population }}</span></p>
+						<p class="label">Region: <span class="text">{{ selectedCountryData.region }}</span></p>
+						<p class="label">Sub Region: <span class="text">{{ selectedCountryData.subregion }}</span></p>
+						<p class="label">Capital: <span class="text">{{ selectedCountryData.capital }}</span></p>
+					</div>
+					<div class="col-inner col-holder">
+						<p class="label">Top Level Domain: <span class="text">{{ selectedCountryData.nativeName }}</span></p>
+						<p class="label">Currencies: <span class="text">Euro</span></p>
+						<p class="label">Languages: <span class="text">Dutch, French, German</span></p>
+					</div>
+				</div>
+	
+				<p class="label countries" *ngIf="selectedCountryData.borders.length != 0">
+					<span>Border Countries:</span> 
+					<span class="badge box-shadow-1" *ngFor="let border of selectedCountryData.borders">{{ border }}</span>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>

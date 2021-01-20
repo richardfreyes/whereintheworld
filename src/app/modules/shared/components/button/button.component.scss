@@ -1,0 +1,24 @@
+@import 'theme';
+
+button {
+	padding: 2px 35px;
+	font-size: 16px;
+	font-family: 'Nunito Sans', sans-serif;
+	background: #fff;
+
+	i {
+		margin-right: 7px;
+		font-size: 21px;
+	}
+
+	@include respond-to(sm-down) {
+		padding: 0px 24px;
+		font-size: 13px;
+		line-height: 32px;
+
+		i {
+			font-size: 20px;
+		}
+	}
+}
+

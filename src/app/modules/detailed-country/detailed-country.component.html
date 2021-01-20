@@ -1,0 +1,45 @@
+<div class="card-detail-view">
+	<div class="container">
+		<app-button
+			class="btn-back"
+			type="back"
+			[routerLink]="['/']"
+		></app-button>
+
+		<app-empty-state *ngIf="(isGetDetailedCountryError$ | async)"></app-empty-state>
+
+		<mat-spinner *ngIf="(isGetDetailedCountryTransacting$ | async)"></mat-spinner>
+
+		<div class="content-wrapper row row-parent" *ngIf="(isGetDetailedCountrySuccess$ | async)">
+			<div class="img-holder col-parent">
+				<img *ngIf="selectedCountryData?.flag" class="box-shadow-4" src="{{ selectedCountryData?.flag }}" alt="flag-preview">
+			</div>
+
+			<div class="desc-holder col-parent">
+				<div class="wrapper">
+					<h1 class="title">{{ selectedCountryData.name }}</h1>
+
+					<div class="row row-inner">
+						<div class="col-inner col-holder">
+							<p class="label" *ngIf="selectedCountryData?.nativeName">Native Name: <span class="text">{{ selectedCountryData?.nativeName }}</span></p>
+							<p class="label" *ngIf="selectedCountryData?.population">Population: <span class="text">{{ selectedCountryData?.population }}</span></p>
+							<p class="label" *ngIf="selectedCountryData?.region">Region: <span class="text">{{ selectedCountryData?.region }}</span></p>
+							<p class="label" *ngIf="selectedCountryData?.subregion">Sub Region: <span class="text">{{ selectedCountryData?.subregion }}</span></p>
+							<p class="label" *ngIf="selectedCountryData?.capital">Capital: <span class="text">{{ selectedCountryData?.capital }}</span></p>
+						</div>
+						<div class="col-inner col-holder">
+							<p class="label" *ngIf="selectedCountryData?.nativeName">Top Level Domain: <span class="text">{{ selectedCountryData.nativeName }}</span></p>
+							<p class="label" *ngIf="selectedCountryData?.currencies">Currencies: <span class="text">{{ selectedCountryData.currencies[0].name }}</span></p>
+							<p class="label" *ngIf="selectedCountryData?.languages">Languages: <span class="text" *ngFor="let languages of selectedCountryData?.languages let isLast = last">{{ languages?.name }}{{ isLast ? '' : ', ' }}</span></p>
+						</div>
+					</div>
+		
+					<p class="label countries" *ngIf="selectedCountryData?.borders?.length != 0">
+						<span>Border Countries:</span> 
+						<span class="badge box-shadow-2" *ngFor="let regions of matchedRegions" (click)="handleOnClickBorder(regions)">{{ regions?.name }}</span>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

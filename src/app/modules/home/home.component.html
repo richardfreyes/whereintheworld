@@ -1,0 +1,41 @@
+<div class="home">
+	<div class="container">
+		<div class="navigation-holder">
+			<div class="search">
+				<div class="holder">
+					<i class="fas fa-search icon"></i>
+					<input class="box-shadow-1" type="text" placeholder="Search for a country..." [(ngModel)]="searchText" autocomplete="off">
+				</div>
+			</div>
+
+			<div class="filter">
+				<mat-form-field class="filter-select box-shadow-1" appearance="fill">
+					<mat-label>Filter by Region</mat-label>
+					<mat-select [(ngModel)]="filterRegion" name="food">
+					  <mat-option *ngFor="let data of regionOptions" [value]="data.region">
+							 {{data.region}}
+					  </mat-option>
+					</mat-select>
+				 </mat-form-field>
+			</div>
+		</div>
+
+		<mat-spinner *ngIf="(isGetCountriesTransacting$ | async)"></mat-spinner>
+
+		<app-empty-state *ngIf="(isGetCountriesError$ | async)"></app-empty-state>
+
+		<div class="card-holder" 
+			*ngIf="(isGetCountriesSuccess$ | async)"
+			(scrolled)="limit = limit + 4" 
+			[infiniteScrollDistance]="0.5" 
+			infiniteScroll>
+
+			<app-card-list 
+				*ngFor="let data of countriesListData | filter: searchText | filter: filterRegion | slice: 0:limit" 
+				[data]="data"
+				(onClickCard)="handleOnClickEvent(data)"
+			></app-card-list>
+		</div>
+	</div>
+</div>
+

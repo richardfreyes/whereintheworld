@@ -1,0 +1,39 @@
+
+
+mat-form-field {
+	&.filter-select {
+		font: normal 14px/22px "Nunito Sans", sans-serif;
+		@include boxshadow(0 0 9px 3px #eff1ee);
+
+		@include respond-to(sm-down) {
+			mat-label {
+				font-size: 12px;
+			}
+		}
+
+		.mat-form-field-wrapper {
+			padding: 0;
+
+			.mat-form-field-flex {
+				padding-top: 8px;
+				border-radius: 5px;
+				background: #fff;
+
+				.mat-form-field-infix {
+					padding-bottom: 8px;
+				}
+			}
+
+			.mat-form-field-underline {
+				display: none;
+			}
+		}
+	}
+}
+
+.mat-select-panel {
+	position: relative;
+	top: 45px;
+	min-width: calc(100% + 20px) !important;
+	left: 5px !important;
+}

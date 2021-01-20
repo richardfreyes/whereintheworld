@@ -1,0 +1,10 @@
+
+.box-shadow-1 { @include box_shadow(1, light); }
+.box-shadow-2 { @include box_shadow(2, light); }
+.box-shadow-3 { @include box_shadow(3, m-dark); }
+.box-shadow-4 { @include box_shadow(4, x-dark); }
+
+.box-shadow-bottom {
+	@include box_shadow(box-shadow-bottom, light);
+}
+

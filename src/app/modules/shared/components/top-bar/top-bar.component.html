@@ -1,0 +1,17 @@
+<div class="top-bar box-shadow-bottom">
+	<div class="container">
+		<div class="holder">
+			<div class="label-wrapper">
+				<h1 class="title">Where in the world?</h1>
+			</div>
+	
+			<div class="light-dark" (click)="storeThemeSelection()">
+				<div class="icon-holder">
+					<!-- <img class="icon" src="../../../../../assets/icons/moon.svg" alt="icon"> -->
+					<i [ngClass]="isDarkTheme ? 'fas fa-moon' : 'far fa-moon'"></i>
+				</div>
+				<p class="label">Dark Mode</p>
+			</div>
+		</div>
+	</div>
+</div>

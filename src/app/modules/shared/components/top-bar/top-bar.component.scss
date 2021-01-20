@@ -1,0 +1,68 @@
+@import 'theme';
+
+.top-bar {
+	position: relative;
+	padding: 9px 0;
+
+	.container {
+		.holder {
+			@include flexbox;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			.light-dark {
+				@include flexbox;
+				flex-wrap: wrap;
+				cursor: pointer;
+
+				.icon-holder {
+					margin: 23px 8px auto auto;
+
+					.icon {
+						width: 18px;;
+					}
+				}
+
+				p {
+					margin: auto;
+
+					&.label {
+						font-weight: 600;
+					}
+				}
+			}
+		}
+	}
+
+	@include respond-to(sm-down) {
+		padding: 15px 0;
+		
+		.container {
+			.holder {
+				.label-wrapper {
+					.title {
+						font-size: 14px;
+					}
+				}
+
+				.light-dark {
+					.icon-holder {
+						margin: 9px 8px auto auto;
+
+						i {
+							font-size: 13px;
+						}
+					}
+
+					p {
+
+						&.label {
+							font-size: 12px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
