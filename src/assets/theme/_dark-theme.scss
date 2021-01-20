@@ -50,8 +50,8 @@
 
 	// components
 	input {
-		background: #2b3743;
 		color: #f8ffff;
+		background: #2b3743;
 
 		&::placeholder {
 			color: #f8ffff;
@@ -72,6 +72,31 @@
 
 			span {
 				color: #f8ffff;
+			}
+		}
+	}
+
+	.mat-select-panel {
+		background: #2b3743;
+
+		mat-option {
+			color: #f8ffff;
+			background: #2b3743;
+
+			&.mat-option {
+				&.mat-active {
+					@include on-event {
+						background: #303e4c;
+					}
+
+					span {
+						color: #f8ffff;
+					}
+				}
+
+				@include on-event {
+					background: #303e4c;
+				}
 			}
 		}
 	}
