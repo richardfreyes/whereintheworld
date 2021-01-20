@@ -21,6 +21,7 @@ import { SearchBarComponent } from '@rcc/shared/components/search-bar/search-bar
 import * as fromCountries from '@rcc/shared/store/countries/index';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { AppRoutingModule } from '@rcc/root/app-routing.module';
+import { CommaSeparatorPipe } from './pipes/comma-separator.pipe';
 
 
 
@@ -47,7 +48,8 @@ import { AppRoutingModule } from '@rcc/root/app-routing.module';
 		CardDetailViewComponent,
 		ButtonComponent,
 		SearchBarComponent,
-		EmptyStateComponent
+		EmptyStateComponent,
+		CommaSeparatorPipe
 	],
 	exports: [
 		TopBarComponent,

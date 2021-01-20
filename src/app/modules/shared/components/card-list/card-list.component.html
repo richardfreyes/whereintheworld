@@ -6,7 +6,7 @@
    <div class="content">
       <h2 class="title">{{ data.name }}</h2>
 
-      <p class="label">Population: <span class="text">{{ data.population }}</span></p>
+      <p class="label">Population: <span class="text">{{ data.population | commaSeparator }}</span></p>
       <p class="label">Region: <span class="text">{{ data.region }}</span></p>
       <p class="label">Capital: <span class="text">{{ data.capital }}</span></p>
    </div>
