@@ -5,11 +5,9 @@
 	max-width: 265px;
 	border-radius: 5px;
 	overflow: hidden;
-	transition: all ease-in 0.3s;
 
 	@include on-event {
 		transform: translate(0, -10px);
-		transition: all ease-in 0.3s;
 	}
 
 	.image-holder {
